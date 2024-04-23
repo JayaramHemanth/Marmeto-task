@@ -14,7 +14,7 @@
     <h2 class="heading">SELECT YOUR CHOICE</h2>
   </div>
   <div class="tab-container">
-    <button class="tablinks active" onclick="openCategory(event, 'Men')">Men</button>
+    <button id="MenTab" class="tablinks active" onclick="openCategory(event, 'Men')">Men</button>
     <button class="tablinks" onclick="openCategory(event, 'Women')">Women</button>
     <button class="tablinks" onclick="openCategory(event, 'Kids')">Kids</button>
   </div>
@@ -24,5 +24,9 @@
   <div id="Kids" class="tabcontent"></div>
 
   <script src="script.js"></script>
+  <script>
+    // Ensure the "Men" tab is active initially
+    document.getElementById("MenTab").classList.add("active");
+  </script>
 </body>
 </html>

@@ -11,7 +11,7 @@ body {
   background-color: #e5e0e0;
   border: none;
   border-radius: 5px;
-  padding: 10px 50px;
+  padding: 10px 20px; /* Reduced padding for smaller screens */
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -29,13 +29,12 @@ body {
 
 .tabcontent.show {
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  /* background-color: #2196F3; */
+  grid-template-columns: auto auto; /* Two columns for smaller screens */
   padding: 10px;
 }
 
 .tabcontent .item {
-  flex: 0 0 calc(33.33% - 20px);
+  flex: 0 0 calc(50% - 20px); /* Two items per row for smaller screens */
   background-color: #f9f9f9;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -45,8 +44,8 @@ body {
 
 .tabcontent .item img {
   width: 100%;
-  max-height: 300px; /* Set a maximum height for the image */
-  object-fit: fill; /* Maintain aspect ratio and cover the entire space */
+  max-height: 300px;
+  object-fit: fill;
   border-radius: 5px;
   margin-bottom: 10px;
 }
@@ -58,9 +57,11 @@ body {
   padding-left: 10px;
   padding-right: 10px;
 }
+
 .title {
   margin-bottom: -20px;
 }
+
 .price {
   font-weight: 600;
 }
@@ -73,10 +74,12 @@ body {
   text-decoration: line-through;
   color: gray;
 }
+
 .disc {
   color: red;
   font-weight: 500;
 }
+
 .btn {
   width: 100%;
   background-color: black;
@@ -100,4 +103,33 @@ body {
   padding: 3px;
   color: black;
   border-radius: 3px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (min-width: 768px) {
+  .tablinks {
+    padding: 10px 30px; /* Adjusted padding for tablet screens */
+  }
+
+  .tabcontent.show {
+    grid-template-columns: auto auto auto; /* Three columns for tablet screens */
+  }
+
+  .tabcontent .item {
+    flex: 0 0 calc(33.33% - 20px); /* Three items per row for tablet screens */
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .tablinks {
+    padding: 10px 50px; /* Revert padding for desktop screens */
+  }
+
+  .tabcontent.show {
+    grid-template-columns: auto auto auto auto; /* Four columns for desktop screens */
+  }
+
+  .tabcontent .item {
+    flex: 0 0 calc(25% - 20px); /* Four items per row for desktop screens */
+  }
 }
