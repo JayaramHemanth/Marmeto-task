@@ -1,0 +1,46 @@
+.tab-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tablinks {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tablinks.active {
+  background-color: #ddd;
+}
+
+.tabcontent {
+  display: none;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tabcontent.show {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  /* background-color: #2196F3; */
+  padding: 10px;
+}
+
+.tabcontent .item {
+  flex: 0 0 calc(33.33% - 20px);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.tabcontent .item img {
+  width: 100%;
+  max-height: 300px; /* Set a maximum height for the image */
+  object-fit: fill; /* Maintain aspect ratio and cover the entire space */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}

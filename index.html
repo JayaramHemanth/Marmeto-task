@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Categories</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="tab-container">
+    <button class="tablinks active" onclick="openCategory(event, 'Men')">Men</button>
+    <button class="tablinks" onclick="openCategory(event, 'Women')">Women</button>
+    <button class="tablinks" onclick="openCategory(event, 'Kids')">Kids</button>
+  </div>
+
+  <div id="Men" class="tabcontent"></div>
+  <div id="Women" class="tabcontent"></div>
+  <div id="Kids" class="tabcontent"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
