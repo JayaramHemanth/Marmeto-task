@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
   fetchData("Men");
 
   // Activate Men tab and show its content
-  document.getElementById("MenTab").classList.add("active");
-  openCategory(event, 'Men');
-});
 
-function openCategory(evt, categoryName) {
+  openCategory("MenTab", 'Men');
+ });
+
+function openCategory(Tabid, categoryName) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
@@ -26,7 +26,7 @@ function openCategory(evt, categoryName) {
 
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(categoryName).classList.add("show");
-  evt.currentTarget.classList.add("active");
+  document.getElementById(Tabid).classList.add("active");
 
   // Clear the content of the current category
   for (i = 0; i < tabcontent.length; i++) {
