@@ -1,12 +1,11 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   // Show default category content (Men)
   fetchData("Men");
 
   // Activate Men tab and show its content
 
-  openCategory("MenTab", 'Men');
- });
+  openCategory("MenTab", "Men");
+});
 
 function openCategory(Tabid, categoryName) {
   // Declare all variables
@@ -41,7 +40,9 @@ function openCategory(Tabid, categoryName) {
 
 function fetchData(categoryName) {
   // Simulating fetching data from API
-  fetch("https://cdn.shopify.com/s/files/1/0564/3685/0790/files/multiProduct.json")
+  fetch(
+    "https://cdn.shopify.com/s/files/1/0564/3685/0790/files/multiProduct.json"
+  )
     .then((response) => response.json())
     .then((data) => displayCategoryData(data, categoryName))
     .catch((error) => console.error("Error fetching data:", error));
@@ -56,13 +57,16 @@ function displayCategoryData(data, categoryName) {
 
   categoryData.category_products.forEach((product) => {
     const percentageDiscount =
-      ((product.compare_at_price - product.price) / product.compare_at_price) * 100;
+      ((product.compare_at_price - product.price) / product.compare_at_price) *
+      100;
     const itemElement = document.createElement("div");
     itemElement.classList.add("item");
     itemElement.innerHTML = `
       <div style="position: relative;">
         <img src="${product.image}" alt="${product.title}">
-        <p class="badge">${product.badge_text === null ? "" : product.badge_text}</p>
+        <p class="badge">${
+          product.badge_text === null ? "" : product.badge_text
+        }</p>
       </div>
       <div class="title">
         <h4>${product.title}</h4>
